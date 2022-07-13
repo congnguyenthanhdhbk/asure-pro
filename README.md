@@ -45,11 +45,16 @@ For example:
 7. Java have various ecosystem tools to apply in project as Jenkins, Sonaqueber, Gradle, Maven etc
 ### Q2: I have no experience for developing mobile application. I am only focus on developing as backend developer by using java
 ### Q3: I have 2 years experience for applying devops to develop CI/CD. I can hand on below tools:
-1. Jenkins
-2. Linux, CentOS
-3. Kubernetes, Docker
-4. Terraform
-5. GitOps
+1. Implement CI/CD to build and deploy service. I am always following tools:
+- Jenkins 
+- Linux, CentOS 
+- Kubernetes, Docker 
+- Terraform 
+- GitOps
+2. Implement test automation
+3. Always monitor system by applying tools Prometheus, Grafana, Cloudwatch
+4. Build alert system to trigger any issue regarding the system
+5. Monitor logs, tracing and another metrics on prometheus, grafana, cloudwatch
 ## Q4: I have experiences for setup AWS cloud and apply below service for my project
 1. SNS (simple Notification Service) and SQS (Simple Queue Service) as queue to delivery message in system
 2. EKS (Elastic Kubernetes Service) to host a Kubernetes for build service by using Helm, Kubectl to deploy specific service
@@ -68,8 +73,19 @@ For example:
 - Test coverage: Is there a need to test more cases?
 - Architecture: Does the code use encapsulation and modularization to achieve separation of concerns?
 - Reusability: Does the code use reusable components, functions, and services?
-2. Check Line of code for PR before reviewing
-- If Line of code greater than 400 then I will reject. The main reason is too many code to review effectively
+2. Check LOC (Line Of Code) for PR (Pull Request) before reviewing
+- If Line of code greater than 400 for each reviewing session then I will reject. The main reason is too many code to review effectively
 - Only review code less than 400 LOC
-3. Run sonarqueber to check smell code. Sonarque is tool which setup to check code quality
-4. Review business checklist, after that, running unit test to ensure all business is cover by developer
+3. Feedback for reviewing
+- Use tools as Bitbucket, Gitlab, Github to check code change to feedback for reviewing
+- Use git tool to check code version and history to feedback for scope change of code
+- Review focus on find a defect and suggest many solution to resolve this concern in code.
+It can regard performance, architecture, mistake business, security as step 1
+4. Finally, Double check to ensure any problem in reviewing to completely resolve before releasing
+## Q6: I focus on the most important criteria as below
+1. Having career path clearly
+2. Working as team
+3. Being able to communicate effectively
+4. Having knowledge domain strongly
+5. Having Technical expert
+6. Have an extensive background in software development
