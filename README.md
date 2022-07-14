@@ -89,3 +89,71 @@ It can regard performance, architecture, mistake business, security as step 1
 4. Having knowledge domain strongly
 5. Having Technical expert
 6. Have an extensive background in software development
+# PART2: Backend
+Prepare
+1. postgres
+2. Run below script to insert role
+```
+INSERT INTO roles(name) VALUES('ROLE_STUDENT');
+INSERT INTO roles(name) VALUES('ROLE_MENTOR');
+INSERT INTO roles(name) VALUES('ROLE_ADMIN');
+```
+## API BE
+1. API add mentor or student
+This API is only accept for role admin to add mentor or student
+### curl request
+```
+curl --location --request POST 'http://localhost:8080/api/v1/auth/signup' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: asureprouser=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtZW50b3IiLCJpYXQiOjE2NTc4MTcwNjgsImV4cCI6MTY1NzkwMzQ2OH0.r2MWWJUlihzMSOG-4deTtOOsznP_rY65XJhEJgcpTTT4cUVucRRQOhBt6gfwIgjVmCSBJPAGxE4Hb_9owaRFpg' \
+--data-raw '{
+    "username": "student",
+    "email": "student@asure-pro.com",
+    "password": "1234556666",
+    "role": ["student"]
+}'
+```
+### response
+```
+{
+    "message": "User registered successfully!"
+}
+```
+2. API login
+This API for 3 role
+```
+curl --location --request POST 'http://localhost:8080/api/v1/auth/signin' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: asureprouser=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1NzgxOTM0NCwiZXhwIjoxNjU3OTA1NzQ0fQ.izMm0a1FT-wwDIeM8K9svoikiHaIGzGCqympXofeZneYLNdgMH5PK6prxPkw-1g_-kK2aanLC1ovexR0rJxxxQ' \
+--data-raw '{
+    "username": "admin",
+    "password": "1234556666"
+}'
+```
+### Response
+```
+{
+    "id": 1,
+    "username": "admin",
+    "email": "admin@asure-pro.com",
+    "roles": [
+        "ROLE_ADMIN"
+    ]
+}
+```
+3. API to sign out
+```
+curl --location --request POST 'http://localhost:8080/api/v1/auth/signout' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: asureprouser=' \
+--data-raw '{
+    "username": "admin",
+    "password": "1234556666"
+}'
+```
+4. API get list member base on role student and mentor
+```
+curl --location --request GET 'http://localhost:8080/api/v1/students?role=mentor&page=0&size=10' \
+--header 'Cookie: asureprouser=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdHVkZW50IiwiaWF0IjoxNjU3ODE5NTE2LCJleHAiOjE2NTc5MDU5MTZ9.WDT4i4VvZ-CMZ8Zp2pS72VzWaS48aa5-Ncfmgsm0CSsMM6l-X0punRjtK-73aGgONXKAIf_Dgq-jyY9AFT1jbQ'
+```
+## FE (TODO)
