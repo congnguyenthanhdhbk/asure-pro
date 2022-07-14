@@ -57,8 +57,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     http.cors().and().csrf().disable()
       .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
       .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-      .authorizeRequests().antMatchers("/api/auth/**").permitAll()
-      .antMatchers("/api/test/**").permitAll()
+      .authorizeRequests().antMatchers("/api/v1/auth/**").permitAll()
+      .antMatchers("/api/v1/students/**").permitAll()
       .anyRequest().authenticated();
     
     // fix H2 database console: Refused to display ' in a frame because it set 'X-Frame-Options' to 'deny'
