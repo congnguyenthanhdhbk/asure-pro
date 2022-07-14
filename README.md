@@ -90,6 +90,11 @@ It can regard performance, architecture, mistake business, security as step 1
 5. Having Technical expert
 6. Have an extensive background in software development
 # PART2: Backend
+Tech Stack
+- Java 11
+- Spring boot
+- Postgres
+- Gradle
 Prepare
 1. postgres
 2. Run below script to insert role
@@ -157,3 +162,6 @@ curl --location --request GET 'http://localhost:8080/api/v1/students?role=mentor
 --header 'Cookie: asureprouser=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdHVkZW50IiwiaWF0IjoxNjU3ODE5NTE2LCJleHAiOjE2NTc5MDU5MTZ9.WDT4i4VvZ-CMZ8Zp2pS72VzWaS48aa5-Ncfmgsm0CSsMM6l-X0punRjtK-73aGgONXKAIf_Dgq-jyY9AFT1jbQ'
 ```
 ## FE (TODO)
+Tech stack
+- Reactjs
+- Mobx
